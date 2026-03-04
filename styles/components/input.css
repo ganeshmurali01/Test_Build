@@ -1,0 +1,49 @@
+/* ── Input ── styles/components/input.css */
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.input-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+}
+
+.input-field {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    background: var(--bg-base);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: border-color var(--duration-fast) var(--ease-default),
+        box-shadow var(--duration-fast) var(--ease-default);
+}
+
+.input-field:focus {
+    border-color: var(--color-brand-500);
+    box-shadow: 0 0 0 3px rgb(26 86 255 / 0.15);
+}
+
+.input-field--error {
+    border-color: var(--color-danger-500);
+}
+
+.input-field--error:focus {
+    box-shadow: 0 0 0 3px rgb(239 68 68 / 0.15);
+}
+
+.input-error {
+    font-size: var(--text-xs);
+    color: var(--color-danger-500);
+}
+
+.input-helper {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+}

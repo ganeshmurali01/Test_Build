@@ -1,0 +1,45 @@
+/* ── Loader ── styles/components/loader.css */
+.loader {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader__spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--color-brand-500);
+    border-radius: 50%;
+    animation: spin var(--duration-slow) linear infinite;
+}
+
+.loader--sm .loader__spinner {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+}
+
+.loader--lg .loader__spinner {
+    width: 48px;
+    height: 48px;
+    border-width: 4px;
+}
+
+/* Full-screen overlay */
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 0.4);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

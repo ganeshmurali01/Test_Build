@@ -1,0 +1,55 @@
+/* ── Card ── styles/components/card.css */
+.card {
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: box-shadow var(--duration-normal) var(--ease-default),
+        transform var(--duration-normal) var(--ease-default);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.card__image-wrap {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--bg-muted);
+}
+
+.card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-default);
+}
+
+.card:hover .card__image-wrap img {
+    transform: scale(1.05);
+}
+
+.card__body {
+    padding: var(--space-4);
+}
+
+.card__title {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-1);
+}
+
+.card__price {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-brand-500);
+}
+
+.card__footer {
+    padding: var(--space-4);
+    padding-top: 0;
+}
