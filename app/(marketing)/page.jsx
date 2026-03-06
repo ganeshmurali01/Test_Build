@@ -115,6 +115,7 @@ export default function HomePage() {
                         ].map(({ icon, title, desc, color }) => (
                             <div
                                 key={title}
+                                className="service-card"
                                 style={{
                                     background: "var(--bg-base)",
                                     border: "1px solid var(--border-color)",
@@ -122,14 +123,6 @@ export default function HomePage() {
                                     padding: "var(--space-8)",
                                     transition: "transform var(--duration-normal), box-shadow var(--duration-normal)",
                                     cursor: "default",
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = "translateY(-4px)";
-                                    e.currentTarget.style.boxShadow = "var(--shadow-lg)";
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = "none";
-                                    e.currentTarget.style.boxShadow = "none";
                                 }}
                             >
                                 <div style={{ width: 64, height: 64, borderRadius: "var(--radius-lg)", background: color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem", marginBottom: "var(--space-6)" }}>

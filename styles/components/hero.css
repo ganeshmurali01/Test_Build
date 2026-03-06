@@ -157,3 +157,9 @@
         text-align: center;
     }
 }
+
+/* ── Service Card Hover ── */
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
