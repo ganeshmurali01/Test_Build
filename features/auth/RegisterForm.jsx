@@ -34,7 +34,7 @@ export default function RegisterForm() {
 
         setLoading(true);
         try {
-            await post("/api/auth/register", { name: fields.name, email: fields.email, password: fields.password });
+            await post("/api/auth/register", { name: fields.name, email: fields.email, password: fields.password, confirmPassword: fields.confirmPassword });
             router.push("/login");
         } catch (err) {
             setApiError(err.message || "Registration failed. Please try again.");
