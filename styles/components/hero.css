@@ -1,0 +1,159 @@
+/* ── Hero Bubbles ── styles/components/hero.css */
+.hero-pet {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-brand-50);
+}
+
+.hero-pet__content {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    padding: var(--space-12) var(--space-6);
+    margin-left: max(var(--space-6), calc((100vw - var(--container-max)) / 2));
+}
+
+.hero-pet__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+/* ── Animated Bubbles ── */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 60%, rgba(133, 173, 255, 0.4) 100%);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: floatUp linear infinite;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: rotate(-45deg);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.8) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20vh) scale(1.2) translateX(20px);
+        opacity: 0;
+    }
+}
+
+/* Generate different bubble sizes & speeds */
+.bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    left: 25%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 30px;
+    height: 30px;
+    left: 40%;
+    animation-duration: 6s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    left: 55%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    left: 70%;
+    animation-duration: 9s;
+    animation-delay: 5s;
+}
+
+.bubble:nth-child(6) {
+    width: 90px;
+    height: 90px;
+    left: 85%;
+    animation-duration: 14s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(7) {
+    width: 35px;
+    height: 35px;
+    left: 45%;
+    animation-duration: 7s;
+    animation-delay: 0.5s;
+}
+
+.bubble:nth-child(8) {
+    width: 75px;
+    height: 75px;
+    left: 65%;
+    animation-duration: 11s;
+    animation-delay: 6s;
+}
+
+/* ── Mobile Layout ── */
+@media (max-width: 900px) {
+    .hero-pet {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-pet__image {
+        position: relative;
+        width: 100%;
+        height: 40vh;
+        clip-path: none;
+        order: 1;
+    }
+
+    .hero-pet__content {
+        order: 2;
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+}

@@ -8,7 +8,8 @@ import "@/styles/components/navbar.css";
 
 const NAV_LINKS = [
     { href: "/", label: "Home" },
-    { href: "/products", label: "Products" },
+    { href: "/#services", label: "Services" },
+    { href: "/products", label: "Shop" },
     { href: "/cart", label: "Cart" },
     { href: "/profile", label: "Profile" },
 ];
@@ -24,7 +25,7 @@ export default function Navbar() {
         <nav className="navbar" aria-label="Main navigation">
             <div className="navbar__inner">
                 <Link href="/" className="navbar__logo">
-                    ShopNext
+                    PawNext 🐾
                 </Link>
 
                 <ul className="navbar__links" role="list">

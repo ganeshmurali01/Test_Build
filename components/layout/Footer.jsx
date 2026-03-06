@@ -2,7 +2,8 @@ import Link from "next/link";
 
 const FOOTER_LINKS = [
     { href: "/", label: "Home" },
-    { href: "/products", label: "Products" },
+    { href: "/#services", label: "Services" },
+    { href: "/products", label: "Shop" },
     { href: "/cart", label: "Cart" },
     { href: "/login", label: "Sign In" },
 ];
@@ -37,7 +38,7 @@ export default function Footer() {
                         color: "var(--color-brand-500)",
                     }}
                 >
-                    ShopNext
+                    PawNext
                 </span>
 
                 <nav aria-label="Footer navigation">
@@ -63,7 +64,7 @@ export default function Footer() {
                 </nav>
 
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--text-secondary)", margin: 0 }}>
-                    © {year} ShopNext. All rights reserved.
+                    © {year} PawNext. All rights reserved.
                 </p>
             </div>
         </footer>
